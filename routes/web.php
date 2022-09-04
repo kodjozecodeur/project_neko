@@ -4,9 +4,9 @@ use Illuminate\Support\Facades\Route;
 
 
 
-// Route::get('/', function () {
-//     return view('backoffice.customer.dashboard');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 //creation ofcustomer prefix routes
 Route::prefix('customer')->group(function () {

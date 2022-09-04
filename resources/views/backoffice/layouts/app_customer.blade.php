@@ -13,7 +13,7 @@
         @yield('sidebar_menu')
         <!--sidebar end here-->
         <div id="main">
-            <nav class="navbar navbar-header navbar-expand navbar-light">
+            {{-- <nav class="navbar navbar-header navbar-expand navbar-light">
                 <a class="sidebar-toggler" href="#"><span class="navbar-toggler-icon"></span></a>
                 <button class="btn navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -81,7 +81,7 @@
                         </li>
                     </ul>
                 </div>
-            </nav>
+            </nav> --}}
 
             <div class="main-content container-fluid">
                 @yield('page_header_title')
