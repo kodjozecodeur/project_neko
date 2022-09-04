@@ -2,17 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('welcome');
+
+// Route::get('/', function () {
+//     return view('backoffice.customer.dashboard');
+// });
+
+//creation ofcustomer prefix routes
+Route::prefix('customer')->group(function () {
+    Route::view('/dashboard', 'backoffice.customer.dashboard')->name('customer.dashboard');
+    Route::view('/offers', 'backoffice.customer.offers')->name('customer.offers');
+    Route::view('/wash_session', 'backoffice.customer.wash_session')->name('customer.wash_session');
+    Route::view('/account_settings', 'backoffice.customer.account_settings')->name('customer.account_settings');
 });
