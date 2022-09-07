@@ -5,8 +5,10 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.layouts.app');
 });
+
+// route for frontend pages
 
 //creation ofcustomer prefix routes
 Route::prefix('customer')->group(function () {
