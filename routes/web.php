@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CustomAuthController;
 
 
 
 Route::get('/', function () {
-    return view('frontend.layouts.app');
+    return view('welcome');
 });
 
 // route for frontend pages
@@ -17,3 +18,12 @@ Route::prefix('customer')->group(function () {
     Route::view('/wash_session', 'backoffice.customer.wash_session')->name('customer.wash_session');
     Route::view('/account_settings', 'backoffice.customer.account_settings')->name('customer.account_settings');
 });
+
+//auth registration
+Route::get('/registration', [CustomAuthController::class, 'createRegisterPage'])->name('register-user');
+Route::post('/custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register');
+Route::get('/dashboard', [CustomAuthController::class, 'dashboard'])->name('dashboard');
+
+//auth login
+Route::get('/login', [CustomAuthController::class, 'loginPage'])->name('login-page');
+Route::post('/custom-login', [CustomAuthController::class, 'customLogin'])->name('login');
